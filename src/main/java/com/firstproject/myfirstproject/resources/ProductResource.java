@@ -27,7 +27,7 @@ public class ProductResource {
 
     @GetMapping("/{id}") // caminho adicional de id
     public ResponseEntity<Product> findById(@PathVariable Long id) {
-		Product cat = ProductRepository.findById(id);
+		Product cat = ProductRepository.findById(id).get();
         return ResponseEntity.ok().body(cat);
     }
 }
